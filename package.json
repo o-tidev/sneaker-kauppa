@@ -2,7 +2,7 @@
   "name": "sneaker-kauppa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://o-tidev.github.io/kottinov-sneakers",
+  "homepage": "https://o-tidev.github.io/sneaker-kauppa/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
