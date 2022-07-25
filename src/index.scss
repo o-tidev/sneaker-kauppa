@@ -55,6 +55,12 @@ header {
   cursor: pointer;
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .cartEmpty {
   text-align: center;
 
@@ -116,7 +122,7 @@ header {
   }
 
   .greenButton {
-    position: relative ;
+    position: relative;
 
     &:disabled {
       animation: button-loading 0.6s ease-in-out infinite;

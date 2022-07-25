@@ -71,17 +71,22 @@ function App() {
         );
       } else {
         setCartItems((prev) => [...prev, item]);
-        const { data } = await axios.post("https://62d7af579c8b5185c779bbf9.mockapi.io/cart", item);
-        setCartItems((prev) => prev.map(obj => {
-          if (obj.parentId === data.parentId) {
-            return {
-              ...obj,
-              id: data.id
-            };
-          } else {
-            return item;
-          }
-        }));
+        const { data } = await axios.post(
+          "https://62d7af579c8b5185c779bbf9.mockapi.io/cart",
+          item
+        );
+        setCartItems((prev) =>
+          prev.map((obj) => {
+            if (obj.parentId === data.parentId) {
+              return {
+                ...obj,
+                id: data.id,
+              };
+            } else {
+              return item;
+            }
+          })
+        );
       }
     } catch (e) {
       console.log(e);
@@ -138,7 +143,9 @@ function App() {
         />
 
         <Header onCartClick={() => setCartOpened(true)} />
-
+        <div className="banner">
+          <img src="./img/banner.png"></img>
+        </div>
         <Routes>
           <Route
             path=""
