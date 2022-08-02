@@ -58,14 +58,16 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
             <div className="items">
               {items.map((obj) => (
                 <>
+                  {console.log(obj.imgUrl)}
                   <div
                     key={obj.id}
                     className="cart-item d-flex align-center mb-20"
                   >
                     <div
                       style={{
-                        backgroundImage: `${process.env.PUBLIC_URL}/img/${obj.imgUrl}`,
+                        backgroundImage: `${process.env.PUBLIC_URL}/${obj.imgUrl}`
                       }}
+
                       className="cart-item-img"
                     ></div>
                     <div className="mr-20 flex">
@@ -100,9 +102,9 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
                 onClick={onClickOrder}
                 className="greenButton"
               >
-                Osta{" "}
+                Osta
                 <img
-                  src={process.env.PUBLIC_URL + "/img/arrow.svg"}
+                  src={`${process.env.PUBLIC_URL}/img/arrow.svg`}
                   alt="arrow"
                 />
               </button>

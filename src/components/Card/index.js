@@ -3,11 +3,8 @@ import ContentLoader from "react-content-loader";
 import React from "react";
 import appContext from "../../context";
 
-
-
 function Card({
   id,
-
   onLike,
   onAdd,
   title,
@@ -51,11 +48,20 @@ function Card({
         <>
           <div className={styles.favorite} onClick={favoriteHandler}>
             <img
-              src={favorite ? `${process.env.PUBLIC_URL+'/img/liked.svg'}` : `${process.env.PUBLIC_URL+ '/img/unliked.svg'}`}
+              src={
+                favorite
+                  ? `${process.env.PUBLIC_URL + "/img/liked.svg"}`
+                  : `${process.env.PUBLIC_URL + "/img/unliked.svg"}`
+              }
               alt="unliked"
             />
           </div>
-          <img src={imgUrl} alt="sneakers" width="100%" height={135} />
+          <img
+            src={process.env.PUBLIC_URL + `/${imgUrl}`}
+            alt="sneakers"
+            width="100%"
+            height={135}
+          />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
@@ -66,7 +72,9 @@ function Card({
               className={styles.plus}
               onClick={() => clickHandler()}
               src={
-                isItemAdded(id) ? `${process.env.PUBLIC_URL + '/img/btn-checked.svg'}` : `${process.env.PUBLIC_URL + '/img/btn-plus.svg'}`
+                isItemAdded(id)
+                  ? `${process.env.PUBLIC_URL + "/img/btn-checked.svg"}`
+                  : `${process.env.PUBLIC_URL + "/img/btn-plus.svg"}`
               }
               alt="plus"
             />

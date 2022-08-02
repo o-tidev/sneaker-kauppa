@@ -16,7 +16,7 @@ export const Info = ({ title, image, description }) => {
       <h2>{title}</h2>
       <p className="opacity-6">{description}</p>
       <button className="greenButton" onClick={() => setCartOpened(false)}>
-        <img src="img/arrow.svg" alt="Arrow" /> Mene takaisin
+        <img src={process.env.PUBLIC_URL + "/img/arrow.svg"} alt="arrow" /> Mene takaisin
       </button>
     </div>
   );
