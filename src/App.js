@@ -144,7 +144,7 @@ function App() {
 
         <Header onCartClick={() => setCartOpened(true)} />
         <div className="banner">
-          <img src="./img/banner.png"></img>
+          <img src={process.env.PUBLIC_URL+"/img/banner.png"} alt="banner"></img>
         </div>
         <Routes>
           <Route

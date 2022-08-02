@@ -25,7 +25,7 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
       setIsOrderComplete(true);
       setCartItems([]);
 
-      // stupid idea, only because of how mockapi works
+      // fixing mock apis issue
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i];
         await axios.delete(
@@ -47,7 +47,7 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
           <img
             onClick={onClose}
             className="removeBtn cu-p"
-            src="img/btn-remove.svg"
+            src={process.env.PUBLIC_URL + "/img/btn-remove.svg"}
             alt="remove"
           />
         </h2>
@@ -63,7 +63,9 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
                     className="cart-item d-flex align-center mb-20"
                   >
                     <div
-                      style={{ backgroundImage: `url(${obj.imgUrl})` }}
+                      style={{
+                        backgroundImage: `${process.env.PUBLIC_URL}/img/${obj.imgUrl}`,
+                      }}
                       className="cart-item-img"
                     ></div>
                     <div className="mr-20 flex">
@@ -72,7 +74,7 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
                     </div>
                     <img
                       className="removeBtn"
-                      src="img/btn-remove.svg"
+                      src={`${process.env.PUBLIC_URL}/img/btn-remove.svg`}
                       alt="remove"
                       onClick={() => removeItem(obj.id)}
                     />
@@ -98,7 +100,11 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
                 onClick={onClickOrder}
                 className="greenButton"
               >
-                Osta <img src="img/arrow.svg" alt="arrow" />
+                Osta{" "}
+                <img
+                  src={process.env.PUBLIC_URL + "/img/arrow.svg"}
+                  alt="arrow"
+                />
               </button>
             </div>
           </>
@@ -113,8 +119,8 @@ function Drawer({ removeItem, onClose, items = [], opened }) {
             }
             image={
               isOrderComplete
-                ? "img/complete-order.jpg"
-                : "img/empty-cart.jpg"
+                ? `${process.env.PUBLIC_URL + "/img/complete-order.jpg"}`
+                : `${process.env.PUBLIC_URL + "/img/empty-cart.jpg"}`
             }
           />
         )}

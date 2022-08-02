@@ -3,6 +3,8 @@ import ContentLoader from "react-content-loader";
 import React from "react";
 import appContext from "../../context";
 
+
+
 function Card({
   id,
 
@@ -49,7 +51,7 @@ function Card({
         <>
           <div className={styles.favorite} onClick={favoriteHandler}>
             <img
-              src={favorite ? "img/liked.svg" : "img/unliked.svg"}
+              src={favorite ? `${process.env.PUBLIC_URL+'/img/liked.svg'}` : `${process.env.PUBLIC_URL+ '/img/unliked.svg'}`}
               alt="unliked"
             />
           </div>
@@ -64,7 +66,7 @@ function Card({
               className={styles.plus}
               onClick={() => clickHandler()}
               src={
-                isItemAdded(id) ? "img/btn-checked.svg" : "img/btn-plus.svg"
+                isItemAdded(id) ? `${process.env.PUBLIC_URL + '/img/btn-checked.svg'}` : `${process.env.PUBLIC_URL + '/img/btn-plus.svg'}`
               }
               alt="plus"
             />

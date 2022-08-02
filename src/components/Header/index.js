@@ -9,7 +9,12 @@ function Header(props) {
     <header className="d-flex justify-between align-center p-40">
       <Link to="/">
         <div className="d-flex align-center ">
-          <img src="img/logo.png" alt="logo" width={40} height={40}></img>
+          <img
+            src={process.env.PUBLIC_URL + "/img/logo.png"}
+            alt="logo"
+            width={40}
+            height={40}
+          ></img>
           <div>
             <h3 className="text-uppercase">Tennarien kauppa</h3>
             <p className="opacity-5">Uudenmaan paras tennariliike</p>
@@ -18,7 +23,12 @@ function Header(props) {
       </Link>
       <ul className="d-flex">
         <li onClick={props.onCartClick} className="mr-30 cu-p">
-          <img src="img/cart.svg" alt="cart" width={18} height={17}></img>
+          <img
+            src={process.env.PUBLIC_URL + "/img/cart.svg"}
+            alt="cart"
+            width={18}
+            height={17}
+          ></img>
           <span>{totalPrice}€</span>
         </li>
         <li>
@@ -26,7 +36,7 @@ function Header(props) {
             <img
               alt="heart"
               className="mr-20 cu-p"
-              src="img/heart.svg"
+              src={process.env.PUBLIC_URL + "/img/heart.svg"}
               width={18}
               height={17}
             ></img>
@@ -37,7 +47,7 @@ function Header(props) {
             <img
               alt="user"
               className="mr-20 cu-p"
-              src="img/user.svg"
+              src={process.env.PUBLIC_URL + "/img/user.svg"}
               width={18}
               height={17}
             ></img>

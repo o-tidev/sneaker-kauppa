@@ -37,7 +37,7 @@ function Home({
           {searchValue ? `Hakutuloksia: "${searchValue}"` : "Kaikki lenkkarit"}
         </h1>
         <div className="search-block d-flex">
-          <img src="img/search.svg" alt="search" />
+          <img src={process.env.PUBLIC_URL+'/img/search.svg'} alt="search" />
           <input onChange={onSearch} value={searchValue} placeholder="Hae..." />
         </div>
       </div>
